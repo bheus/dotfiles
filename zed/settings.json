@@ -9,18 +9,18 @@
 {
   "agent": {
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-haiku-4-5-20251001"
+      "provider": "ollama",
+      "model": "qwen2.5-coder:3b"
     },
     "favorite_models": [],
     "model_parameters": []
   },
   "telemetry": {
     "diagnostics": true,
-    "metrics": false
+    "metrics": false,
   },
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
   "base_keymap": "JetBrains",
   "ui_font_size": 16,
