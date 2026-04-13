@@ -1,2 +1,2 @@
-source /usr/local/share/antigen/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
 antigen init $ZSH/zsh/antigenrc

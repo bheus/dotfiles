@@ -1,0 +1,23 @@
+# Ghostty Configuration
+# https://ghostty.org/docs/config
+
+# Theme: Use solarized with system light/dark mode
+theme = light:iTerm2 Solarized Light,dark:iTerm2 Solarized Dark
+
+# Font
+font-family = Monospace
+font-size = 12
+
+# Window
+window-decoration = true
+window-save-state = default
+
+# Cursor
+cursor-style = block
+cursor-opacity = 0.8
+
+# Copy text on selection
+copy-on-select = true
+
+# Scrollback history (lines)
+scrollback-limit = 10000

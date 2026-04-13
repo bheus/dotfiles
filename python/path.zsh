@@ -1,1 +1,0 @@
-export PATH="$PATH:/Users/bheussler/Library/Python/2.7/bin"

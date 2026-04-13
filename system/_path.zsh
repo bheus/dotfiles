@@ -1,2 +1,2 @@
-export PATH="./bin:/usr/local/bin:/usr/local/sbin:$ZSH/bin:$PATH"
-export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+export PATH="./bin:$HOME/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$ZSH/bin:$PATH"
+export MANPATH="/opt/homebrew/share/man:$MANPATH"

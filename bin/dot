@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 #
 # dot
 #
@@ -7,7 +7,7 @@
 
 set -e
 
-parentDirectory="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
+parentDirectory="$(cd "$( dirname "${0}" )" && pwd -P)"
 dotfilesDirectory="$(cd "$( dirname "$parentDirectory" )" && pwd -P)"
 
 displayUsageAndExit() {
@@ -45,6 +45,17 @@ $ZSH/macos/set-defaults.sh
 
 # Install homebrew
 $ZSH/homebrew/install.sh 2>&1
+
+# Configure ghostty
+$ZSH/ghostty/install.sh 2>&1
+
+# Configure zed
+$ZSH/zed/install.sh 2>&1
+
+# Ensure brew is in PATH (needed on Apple Silicon after fresh install)
+if test "$(uname)" = "Darwin" && test -x /opt/homebrew/bin/brew; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # Upgrade homebrew
 echo "› brew update"

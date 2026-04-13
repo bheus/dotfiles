@@ -35,7 +35,7 @@
 [user]
 	name = Brendan Heussler
 	email = bheussler@gmail.com
-	signingkey = 19D619C42834A152
+	signingkey = 8B59E4A7B9AF233A
 [commit]
 	gpgsign = true
 [gpg]
