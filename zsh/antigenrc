@@ -9,12 +9,8 @@ antigen bundle lukechilds/zsh-nvm
 # Remember to run `antigen reset`
 antigen bundles <<EOBUNDLES
 	brew
-	bundler
-	capistrano
 	docker
-	docker-compose
 	extract
-	gatsby
 	gem
 	git
 	git-extras
@@ -22,10 +18,8 @@ antigen bundles <<EOBUNDLES
 	npm
 	osx
 	perms
-	redis-cli
 	ripgrep
 	spring
-	sublime
 	thefuck
 	tmux
 	vagrant

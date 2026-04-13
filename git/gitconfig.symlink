@@ -14,9 +14,6 @@
         status = auto
         branch = auto
         ui = true
-[pager]
-        diff = diff-so-fancy | less --tabs=1,5 -RFX
-        show = diff-so-fancy | less --tabs=1,5 -RFX
 [core]
 	excludesfile = /Users/bheussler/.gitignore_global
         editor = vim
@@ -37,10 +34,10 @@
         default = simple
 [user]
 	name = Brendan Heussler
-	email = brendan@lifejourney.us
-	signingkey = 36D95E5B
+	email = bheussler@gmail.com
+	signingkey = 19D619C42834A152
 [commit]
-	gpgsign = false
+	gpgsign = true
 [gpg]
 	program = gpg
 [filter "lfs"]
