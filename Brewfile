@@ -1,11 +1,10 @@
 cask_args appdir: '/Applications'
 
-tap 'homebrew/bundle'
-
 brew 'antigen'
 brew 'bat'
 brew 'fd'
 brew 'fzf'
+brew 'glow'
 brew 'gpg2'
 brew 'grc'
 brew 'imagemagick'
