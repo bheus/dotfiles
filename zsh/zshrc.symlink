@@ -27,9 +27,6 @@ do
   source $file
 done
 
-# Docker Desktop completions (must be before compinit)
-fpath=(/Users/bheussler/.docker/completions $fpath)
-
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
