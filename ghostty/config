@@ -5,8 +5,8 @@
 theme = light:iTerm2 Solarized Light,dark:iTerm2 Solarized Dark
 
 # Font
-font-family = Monospace
-font-size = 12
+font-family = JetBrainsMono Nerd Font
+font-size = 13
 
 # Window
 window-decoration = true
