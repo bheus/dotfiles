@@ -2,8 +2,8 @@
 
 Personal dev environment for macOS, managed as topic-based dotfiles.
 
-This has been an ongoing project that has followed me throughough my development career. It originally started
-as a fork from [Zach Holman's dotfiles](https://github.com/holman/dotfiles) at I time when I had no idea
+This has been an ongoing project that has followed me throughout my development career. It originally started
+as a fork from [Zach Holman's dotfiles](https://github.com/holman/dotfiles) at a time when I had no idea
 dotfiles could be so thoughtful and organized. Now with the advent of AI, two things have happened resulting in
 the rework of these files. First, AI is moving in the direction where I'm spending more time in the terminal.
 And, AI has helped me structure these in a way that would have taken several weekends before. These files
@@ -18,7 +18,7 @@ legitimately bring me a lot of joy in my day-to-day, and I hope you find somethi
 | Terminal | [Ghostty](https://ghostty.org) (Solarized, JetBrainsMono Nerd Font) |
 | Editor | [Zed](https://zed.dev) (Solarized, JetBrains keymap) |
 | Runtime manager | [mise](https://mise.jdx.dev) (Node, Ruby, Java, Python) |
-| Git | GPG-signed commits, [delta](https://github.com/dandavies00/delta) (side-by-side diffs), [lazygit](https://github.com/jesseduffield/lazygit) |
+| Git | GPG-signed commits, [delta](https://github.com/dandavison/delta) (side-by-side diffs), [lazygit](https://github.com/jesseduffield/lazygit) |
 | File navigation | [zoxide](https://github.com/ajeetdsouza/zoxide) (`z` / `zi`), [fzf](https://github.com/junegunn/fzf) + [fzf-tab](https://github.com/Aloxaf/fzf-tab), [fd](https://github.com/sharkdp/fd) |
 | File viewing | [eza](https://github.com/eza-community/eza) (`ls`), [bat](https://github.com/sharkdp/bat) (`cat`), [grc](https://github.com/garabik/grc) (colorized output) |
 
@@ -38,8 +38,8 @@ Everything is organized by topic. Each directory can contain:
 
 1. `**/path.zsh` -- PATH setup (`system/_path.zsh`)
 2. `**/*.zsh` (excluding path/completion) -- alphabetical within each topic:
-   - `system/env.zsh` -- `$EDITOR`
    - `system/grc.zsh` -- colorized CLI output
+   - `zed/env.zsh` -- `$EDITOR`
    - `zsh/aliases.zsh` -- eza/bat aliases
    - `zsh/config.zsh` -- shell options, `$HOMEBREW_PREFIX` cache
    - `zsh/fpath.zsh` -- function/completion paths, Docker completions
