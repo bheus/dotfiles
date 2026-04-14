@@ -1,5 +1,5 @@
 # Initialize zinit
-source $(brew --prefix)/opt/zinit/zinit.zsh
+source $HOMEBREW_PREFIX/opt/zinit/zinit.zsh
 
 # Oh-my-zsh snippets — only load what we actually use
 zi snippet OMZ::plugins/git/git.plugin.zsh

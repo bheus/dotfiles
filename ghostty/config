@@ -20,4 +20,4 @@ cursor-opacity = 0.8
 copy-on-select = true
 
 # Scrollback history (lines)
-scrollback-limit = 10000
+scrollback-limit = 100000
