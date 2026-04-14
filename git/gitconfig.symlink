@@ -16,8 +16,23 @@
         ui = true
 [core]
 	excludesfile = /Users/bheussler/.gitignore_global
-        editor = vim
+	editor = zed --wait
 	autocrlf = input
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	light = false
+	side-by-side = true
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
 [apply]
         whitespace = nowarn
 [mergetool]
