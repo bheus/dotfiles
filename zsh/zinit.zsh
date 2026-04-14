@@ -10,3 +10,9 @@ zi snippet OMZ::plugins/copypath/copypath.plugin.zsh
 zi light zsh-users/zsh-autosuggestions
 zi light zsh-users/zsh-syntax-highlighting
 zi light Aloxaf/fzf-tab
+
+# Free up `zi` alias so zoxide can use it for interactive picker
+unalias zi 2>/dev/null
+
+# zoxide replaces z (must load after zinit to reclaim `zi`)
+eval "$(zoxide init zsh)"
