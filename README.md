@@ -1,88 +1,94 @@
-# beedaan does dotfiles
+# dotfiles
 
-Your dotfiles are how you personalize your system. These are mine.
+Personal dev environment for macOS, managed as topic-based dotfiles.
 
-I was a little tired of having long alias files and everything strewn about
-(which is extremely common on other dotfiles projects, too). That led to this
-project being much more topic-centric. I realized I could split a lot of things
-up into the main areas I used (Ruby, git, system libraries, and so on), so I
-structured the project accordingly.
+This has been an ongoing project that has followed me throughough my development career. It originally started
+as a fork from [Zach Holman's dotfiles](https://github.com/holman/dotfiles) at I time when I had no idea
+dotfiles could be so thoughtful and organized. Now with the advent of AI, two things have happened resulting in
+the rework of these files. First, AI is moving in the direction where I'm spending more time in the terminal.
+And, AI has helped me structure these in a way that would have taken several weekends before. These files
+legitimately bring me a lot of joy in my day-to-day, and I hope you find something useful in them as well.
 
-If you're interested in the philosophy behind why projects like these are
-awesome, you might want to [read my post on the
-subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
+## Stack
 
-## topical
+| Category | Tool |
+|----------|------|
+| Shell | zsh + [Zinit](https://github.com/zdharma-continuum/zinit) (plugin manager) |
+| Prompt | [Starship](https://starship.rs) |
+| Terminal | [Ghostty](https://ghostty.org) (Solarized, JetBrainsMono Nerd Font) |
+| Editor | [Zed](https://zed.dev) (Solarized, JetBrains keymap) |
+| Runtime manager | [mise](https://mise.jdx.dev) (Node, Ruby, Java, Python) |
+| Git | GPG-signed commits, [delta](https://github.com/dandavies00/delta) (side-by-side diffs), [lazygit](https://github.com/jesseduffield/lazygit) |
+| File navigation | [zoxide](https://github.com/ajeetdsouza/zoxide) (`z` / `zi`), [fzf](https://github.com/junegunn/fzf) + [fzf-tab](https://github.com/Aloxaf/fzf-tab), [fd](https://github.com/sharkdp/fd) |
+| File viewing | [eza](https://github.com/eza-community/eza) (`ls`), [bat](https://github.com/sharkdp/bat) (`cat`), [grc](https://github.com/garabik/grc) (colorized output) |
 
-Everything's built around topic areas. If you're adding a new area to your
-forked dotfiles — say, "Java" — you can simply add a `java` directory and put
-files in there. Anything with an extension of `.zsh` will get automatically
-included into your shell. Anything with an extension of `.symlink` will get
-symlinked without extension into `$HOME` when you run `script/bootstrap`.
+## Structure
 
-## what's inside
+Everything is organized by topic. Each directory can contain:
 
-A lot of stuff. Seriously, a lot of stuff. Check them out in the file browser
-above and see what components may mesh up with you.
-[Fork it](https://github.com/holman/dotfiles/fork), remove what you don't
-use, and build on what you do use.
+- **`*.zsh`** -- Loaded automatically into the shell environment
+- **`path.zsh`** -- Loaded first, sets up `$PATH`
+- **`completion.zsh`** -- Loaded last, after `compinit`
+- **`install.sh`** -- Run by `script/install`
+- **`*.symlink`** -- Symlinked into `$HOME` (without the `.symlink` extension)
 
-## components
+### Shell load order
 
-There's a few special files in the hierarchy.
+`zshrc.symlink` sources files in this order:
 
-- **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
-  available everywhere.
-- **Brewfile**: This is a list of applications for [Homebrew Cask](https://caskroom.github.io) to install: things like Chrome and 1Password and Adium and stuff. Might want to edit this file before running any initial setup.
-- **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your
-  environment.
-- **topic/path.zsh**: Any file named `path.zsh` is loaded first and is
-  expected to setup `$PATH` or similar.
-- **topic/completion.zsh**: Any file named `completion.zsh` is loaded
-  last and is expected to setup autocomplete.
-- **topic/install.sh**: Any file named `install.sh` is executed when you run `script/install`. To avoid being loaded automatically, its extension is `.sh`, not `.zsh`.
-- **topic/\*.symlink**: Any file ending in `*.symlink` gets symlinked into
-  your `$HOME`. This is so you can keep all of those versioned in your dotfiles
-  but still keep those autoloaded files in your home directory. These get
-  symlinked in when you run `script/bootstrap`.
+1. `**/path.zsh` -- PATH setup (`system/_path.zsh`)
+2. `**/*.zsh` (excluding path/completion) -- alphabetical within each topic:
+   - `system/env.zsh` -- `$EDITOR`
+   - `system/grc.zsh` -- colorized CLI output
+   - `zsh/aliases.zsh` -- eza/bat aliases
+   - `zsh/config.zsh` -- shell options, `$HOMEBREW_PREFIX` cache
+   - `zsh/fpath.zsh` -- function/completion paths, Docker completions
+   - `zsh/fzf.zsh` -- fzf keybindings, fd integration
+   - `zsh/mise.zsh` -- runtime version manager
+   - `zsh/starship.zsh` -- prompt
+   - `zsh/zinit.zsh` -- plugins (OMZ snippets, autosuggestions, syntax highlighting, fzf-tab, zoxide)
+3. `compinit` -- completion system (cached daily)
+4. `**/completion.zsh` -- post-compinit completions
 
-## install
+### Key files
 
-Run this:
+```
+Brewfile                     # Homebrew dependencies
+bin/                         # Scripts added to $PATH
+  dot                        #   Update script (brew, installers, macOS defaults)
+  e                          #   Open $EDITOR shortcut
+ghostty/config               # Ghostty terminal config
+git/gitconfig.symlink        # Git config (delta, GPG, aliases)
+git/gitconfig.local.symlink  # Machine-local git config (credentials)
+git/gitignore_global.symlink # Global gitignore
+macos/set-defaults.sh        # macOS preferences (key repeat, Finder, etc.)
+vim/vimrc.symlink            # Minimal vim config (fallback editor)
+zed/settings.json            # Zed editor config
+zsh/zshrc.symlink            # Shell entry point
+```
+
+## Install
 
 ```sh
-git clone https://github.com/holman/dotfiles.git ~/.dotfiles
+git clone https://github.com/bheus/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
 
-This will symlink the appropriate files in `.dotfiles` to your home directory.
-Everything is configured and tweaked within `~/.dotfiles`.
+This symlinks dotfiles into `$HOME`, installs Homebrew dependencies, and runs topic installers.
 
-The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
-which sets up a few paths that'll be different on your particular machine.
+To update later:
 
-`dot` is a simple script that installs some dependencies, sets sane macOS
-defaults, and so on. Tweak this script, and occasionally run `dot` from
-time to time to keep your environment fresh and up-to-date. You can find
-this script in `bin/`.
+```sh
+dot
+```
 
-## bugs
+## Performance
 
-I want this to work for everyone; that means when you clone it down it should
-work for you even though you may not have `rbenv` installed, for example. That
-said, I do use this as *my* dotfiles, so there's a good chance I may break
-something if I forget to make a check for a dependency.
+Shell startup is optimized via:
+- Cached `brew --prefix` (single call shared across files)
+- Daily `compinit` cache (`compinit -C`)
+- fzf uses `fd` instead of `find`
+- Zinit lazy-loads plugins
 
-If you're brand-new to the project and run into any blockers, please
-[open an issue](https://github.com/holman/dotfiles/issues) on this repository
-and I'd love to get it fixed for you!
-
-## thanks
-
-I forked [Ryan Bates](http://github.com/ryanb)' excellent
-[dotfiles](http://github.com/ryanb/dotfiles) for a couple years before the
-weight of my changes and tweaks inspired me to finally roll my own. But Ryan's
-dotfiles were an easy way to get into bash customization, and then to jump ship
-to zsh a bit later. A decent amount of the code in these dotfiles stem or are
-inspired from Ryan's original project.
+Target startup: under 250ms.
