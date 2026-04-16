@@ -17,6 +17,7 @@ legitimately bring me a lot of joy in my day-to-day, and I hope you find somethi
 | Prompt | [Starship](https://starship.rs) |
 | Terminal | [Ghostty](https://ghostty.org) (Solarized, JetBrainsMono Nerd Font) |
 | Editor | [Zed](https://zed.dev) (Solarized, JetBrains keymap) |
+| Window manager | [AeroSpace](https://github.com/nikitabobko/AeroSpace) (tiling, Dvorak bindings) + [JankyBorders](https://github.com/FelixKratz/JankyBorders) |
 | Runtime manager | [mise](https://mise.jdx.dev) (Node, Ruby, Java, Python) |
 | Git | GPG-signed commits, [delta](https://github.com/dandavison/delta) (side-by-side diffs), [lazygit](https://github.com/jesseduffield/lazygit) |
 | File navigation | [zoxide](https://github.com/ajeetdsouza/zoxide) (`z` / `zi`), [fzf](https://github.com/junegunn/fzf) + [fzf-tab](https://github.com/Aloxaf/fzf-tab), [fd](https://github.com/sharkdp/fd) |
@@ -57,6 +58,8 @@ Brewfile                     # Homebrew dependencies
 bin/                         # Scripts added to $PATH
   dot                        #   Update script (brew, installers, macOS defaults)
   e                          #   Open $EDITOR shortcut
+aerospace/aerospace.toml     # AeroSpace window manager (workspaces, keybindings)
+aerospace/borders.sh         # JankyBorders relaunch on appearance change
 ghostty/config               # Ghostty terminal config
 git/gitconfig.symlink        # Git config (delta, GPG, aliases)
 git/gitconfig.local.symlink  # Machine-local git config (credentials)
