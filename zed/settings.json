@@ -10,10 +10,10 @@
   "agent": {
     "default_model": {
       "provider": "ollama",
-      "model": "qwen2.5-coder:3b"
+      "model": "qwen2.5-coder:3b",
     },
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "telemetry": {
     "diagnostics": true,
@@ -22,7 +22,6 @@
   "session": {
     "trust_all_worktrees": true,
   },
-  "base_keymap": "JetBrains",
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "theme": {
