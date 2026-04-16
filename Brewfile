@@ -3,6 +3,12 @@ cask_args appdir: '/Applications'
 cask 'font-jetbrains-mono-nerd-font'
 cask 'nikitabobko/tap/aerospace'
 
+tap 'FelixKratz/formulae'
+brew 'borders'
+
+tap 'cormacrelf/tap'
+brew 'dark-notify'
+
 brew 'zinit'
 brew 'starship'
 brew 'mise'
