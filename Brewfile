@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 cask 'font-jetbrains-mono-nerd-font'
+cask 'nikitabobko/tap/aerospace'
 
 brew 'zinit'
 brew 'starship'
