@@ -4,6 +4,8 @@
 [alias]
 	co = checkout
 	count = !git shortlog -sn
+	dft = -c diff.external=difft -c core.pager=moor diff
+	dfts = -c diff.external=difft -c core.pager=moor show
 [core]
 	excludesfile = /Users/bheussler/.gitignore_global
 	editor = zed --wait
