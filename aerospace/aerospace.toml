@@ -59,20 +59,24 @@ if.app-id = 'com.apple.Safari'
 run = ['move-node-to-workspace 1', 'layout tiles']
 
 [[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'
+if.app-id = 'com.anthropic.claudefordesktop'
 run = ['move-node-to-workspace 2', 'layout tiles']
 
 [[on-window-detected]]
-if.app-id = 'dev.zed.Zed'
+if.app-id = 'com.mitchellh.ghostty'
 run = ['move-node-to-workspace 3', 'layout tiles']
 
 [[on-window-detected]]
-if.app-id = 'md.obsidian'
+if.app-id = 'dev.zed.Zed'
 run = ['move-node-to-workspace 4', 'layout tiles']
 
 [[on-window-detected]]
-if.app-id = 'com.spotify.client'
+if.app-id = 'md.obsidian'
 run = ['move-node-to-workspace 5', 'layout tiles']
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = ['move-node-to-workspace 6', 'layout tiles']
 
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
