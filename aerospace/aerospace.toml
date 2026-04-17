@@ -46,7 +46,7 @@ automatically-unhide-macos-hidden-apps = false
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
 # Semantic workspaces, mapped to Dvorak left-hand home row (+ one bottom-row key):
-#   A=AI (Claude)  O=Obsidian  E=Editor (Zed)  U=Utility (Ghostty)
+#   A=AI (Claude, Ollama)  O=Obsidian  E=Editor (Zed)  U=Utility (Ghostty)
 #   I=Internet (Safari)  D=Default/scratch  M=Music (Spotify)
 persistent-workspaces = ["A", "O", "E", "U", "I", "D", "M"]
 
@@ -63,6 +63,10 @@ run = ['move-node-to-workspace I', 'layout tiles']
 
 [[on-window-detected]]
 if.app-id = 'com.anthropic.claudefordesktop'
+run = ['move-node-to-workspace A', 'layout tiles']
+
+[[on-window-detected]]
+if.app-id = 'com.electron.ollama'
 run = ['move-node-to-workspace A', 'layout tiles']
 
 [[on-window-detected]]
@@ -168,7 +172,7 @@ run = ['layout floating']
 
     # Workspaces on Dvorak left home row (+ M on bottom row for Music).
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    cmd-ctrl-alt-shift-a = 'workspace A' # AI (Claude)
+    cmd-ctrl-alt-shift-a = 'workspace A' # AI (Claude, Ollama)
     cmd-ctrl-alt-shift-o = 'workspace O' # Obsidian
     cmd-ctrl-alt-shift-e = 'workspace E' # Editor (Zed)
     cmd-ctrl-alt-shift-u = 'workspace U' # Utility (Ghostty)

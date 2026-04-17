@@ -79,7 +79,7 @@ AeroSpace auto-assigns apps to workspaces on launch, keyed to the Dvorak left-ha
 
 | Key | Workspace | App |
 |-----|-----------|-----|
-| `A` | AI | Claude |
+| `A` | AI | Claude, Ollama |
 | `O` | Obsidian | Obsidian |
 | `E` | Editor | Zed |
 | `U` | Utility | Ghostty |
