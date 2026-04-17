@@ -4,3 +4,4 @@ git/gitconfig.symlink
 zsh/antigenrc.zwc
 cache/
 git/tokens.zsh
+.claude/
