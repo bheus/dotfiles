@@ -10,3 +10,8 @@ fi
 if (( $+commands[bat] )); then
   alias cat='bat'
 fi
+
+# prettyping replaces ping
+if (( $+commands[prettyping] )); then
+  alias ping='prettyping --nolegend'
+fi

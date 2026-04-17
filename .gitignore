@@ -1,7 +1,6 @@
 git/gitconfig.symlink
 .DS_Store
 .idea/
-zsh/antigenrc.zwc
 cache/
 git/tokens.zsh
 .claude/

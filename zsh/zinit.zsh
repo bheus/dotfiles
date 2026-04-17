@@ -6,10 +6,8 @@ zi snippet OMZ::plugins/git/git.plugin.zsh
 zi snippet OMZ::plugins/extract/extract.plugin.zsh
 zi snippet OMZ::plugins/copypath/copypath.plugin.zsh
 
-# Plugins
+# Plugins (fzf-tab and syntax-highlighting load post-compinit in completion.zsh)
 zi light zsh-users/zsh-autosuggestions
-zi light zsh-users/zsh-syntax-highlighting
-zi light Aloxaf/fzf-tab
 
 # Free up `zi` alias so zoxide can use it for interactive picker
 unalias zi 2>/dev/null
