@@ -6,7 +6,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Caps Lock to Hyper (cmd+ctrl+opt+shift)",
+                        "description": "Caps Lock to Hyper (ctrl+opt+shift)",
                         "manipulators": [
                             {
                                 "type": "basic",
@@ -20,7 +20,6 @@
                                     {
                                         "key_code": "left_shift",
                                         "modifiers": [
-                                            "left_command",
                                             "left_control",
                                             "left_option"
                                         ]
