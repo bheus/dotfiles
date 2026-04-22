@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.bheussler.recent-downloads</string>
+	<key>connections</key>
+	<dict/>
+	<key>createdby</key>
+	<string>Brendan Heussler</string>
+	<key>description</key>
+	<string>List ~/Downloads newest-first. Optional query filters by filename substring.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Recent Downloads</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>dl</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>./recent.sh "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Newest files in ~/Downloads</string>
+				<key>title</key>
+				<string>Recent Downloads</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>99E42BCB-A0D1-46A0-A45A-9A10096D4667</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Keyword: dl
+
+Shows the 30 newest files in ~/Downloads, newest first.
+Type after the keyword to fuzzy-filter by filename.
+
+Enter opens the file. ⌘C copies the file itself.
+⌘Y previews. Universal Actions work like any file result.</string>
+	<key>uidata</key>
+	<dict>
+		<key>99E42BCB-A0D1-46A0-A45A-9A10096D4667</key>
+		<dict>
+			<key>xpos</key>
+			<real>145</real>
+			<key>ypos</key>
+			<real>235</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.1</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
