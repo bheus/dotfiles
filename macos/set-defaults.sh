@@ -27,3 +27,12 @@ defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+# Dock: auto-hide with no delay, fast animation, small tiles.
+# Tiling WM (aerospace) makes the Dock mostly redundant, but keep it alive
+# so Mission Control / system gestures keep working.
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0.15
+defaults write com.apple.dock tilesize -int 16
+killall Dock
