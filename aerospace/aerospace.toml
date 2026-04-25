@@ -46,7 +46,7 @@ automatically-unhide-macos-hidden-apps = false
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
 # Semantic workspaces, mapped to Dvorak left-hand home row (+ one bottom-row key):
-#   A=AI (Claude, Ollama)  O=Obsidian  E=Editor (Zed)  U=Utility (Ghostty)
+#   A=AI (Claude, Ollama, Codex)  O=Obsidian  E=Editor (Zed)  U=Utility (Ghostty)
 #   I=Internet (Safari)  D=Default/scratch  M=Music (Spotify)
 #   C=Chat/Comms (Slack, Discord, WhatsApp)
 persistent-workspaces = ["A", "O", "E", "U", "I", "D", "M", "C"]
@@ -74,6 +74,10 @@ run = ['move-node-to-workspace A', 'layout tiles']
 
 [[on-window-detected]]
 if.app-id = 'com.electron.ollama'
+run = ['move-node-to-workspace A', 'layout tiles']
+
+[[on-window-detected]]
+if.app-id = 'com.openai.codex'
 run = ['move-node-to-workspace A', 'layout tiles']
 
 [[on-window-detected]]
@@ -107,6 +111,18 @@ run = ['move-node-to-workspace C', 'layout tiles']
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
 run = ['move-node-to-workspace C', 'layout tiles']
+
+[[on-window-detected]]
+if.app-id = 'net.freemacsoft.AppCleaner'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ActivityMonitor'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = ['layout floating']
 
 # Peek-and-dismiss apps; float on top of Slack/Discord tiling.
 [[on-window-detected]]
