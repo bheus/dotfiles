@@ -8,7 +8,7 @@
 	dfts = -c diff.external=difft -c core.pager=moor show
 [core]
 	excludesfile = /Users/bheussler/.gitignore_global
-	editor = zed --wait
+	editor = micro
 	autocrlf = input
 	pager = delta
 [interactive]
