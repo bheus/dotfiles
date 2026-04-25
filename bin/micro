@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Wrap micro to pick a colorscheme based on macOS appearance.
+# Real executable (not a shell function) so external tools like
+# lazygit pick it up via PATH.
+
+scheme=solarized-light
+if defaults read -g AppleInterfaceStyle >/dev/null 2>&1; then
+  scheme=solarized-tc
+fi
+
+exec /opt/homebrew/bin/micro -colorscheme "$scheme" "$@"
