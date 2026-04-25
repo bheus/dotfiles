@@ -11,7 +11,7 @@
   "agent": {
     "default_model": {
       "provider": "ollama",
-      "model": "qwen2.5-coder:3b",
+      "model": "qwen2.5-coder:7b",
     },
     "favorite_models": [],
     "model_parameters": [],
