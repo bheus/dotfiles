@@ -61,9 +61,9 @@ bin/                         # Scripts added to $PATH
   dot                        #   Update script (brew, installers, macOS defaults)
   e                          #   Open $EDITOR shortcut
 aerospace/aerospace.toml     # AeroSpace window manager (workspaces, keybindings)
-aerospace/borders.sh         # JankyBorders relaunch on appearance change
-                             # Triggered by ~/Library/LaunchAgents/com.bheussler.borders-darknotify.plist
-                             # (runs `dark-notify -c borders.sh`; not symlinked from this repo)
+aerospace/borders-run.sh     # Foreground runner; supervised by launchd (com.bheussler.borders)
+aerospace/borders.sh         # `pkill borders` on appearance change; launchd respawns
+                             # via borders-run.sh. Triggered by com.bheussler.borders-darknotify.
 karabiner/karabiner.json     # Karabiner-Elements rules (caps → hyper)
 ghostty/config               # Ghostty terminal config
 git/gitconfig.symlink        # Git config (delta, GPG, aliases)
@@ -101,30 +101,9 @@ script/bootstrap
 
 This symlinks dotfiles into `$HOME`, installs Homebrew dependencies, and runs topic installers.
 
-### Required: JankyBorders theme-switch LaunchAgent
+### One-time: grant Accessibility permission to borders
 
-The borders relaunch on appearance change is driven by a LaunchAgent that isn't symlinked from this repo. After bootstrap, create and load it:
-
-```sh
-cat > ~/Library/LaunchAgents/com.bheussler.borders-darknotify.plist <<'EOF'
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key><string>com.bheussler.borders-darknotify</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/opt/homebrew/bin/dark-notify</string>
-        <string>-c</string>
-        <string>$HOME/.dotfiles/aerospace/borders.sh</string>
-    </array>
-    <key>RunAtLoad</key><true/>
-    <key>KeepAlive</key><true/>
-</dict>
-</plist>
-EOF
-launchctl load ~/Library/LaunchAgents/com.bheussler.borders-darknotify.plist
-```
+JankyBorders needs Accessibility access. The first time it launches, macOS will prompt — approve it in System Settings → Privacy & Security → Accessibility. The launchd jobs (`com.bheussler.borders` and `com.bheussler.borders-darknotify`) are installed and loaded automatically by `aerospace/install.sh`.
 
 To update later:
 
