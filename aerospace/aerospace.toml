@@ -51,10 +51,7 @@ automatically-unhide-macos-hidden-apps = false
 #   C=Chat/Comms (Slack, Discord, WhatsApp)
 persistent-workspaces = ["A", "O", "E", "U", "I", "D", "M", "C"]
 
-# Pin workspace I (Internet/Safari) to the secondary P24h-10 monitor.
-# See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
-    I = 'P24h-10 \(2\)'
     C = 'P24h-10 \(1\)'
 
 # A callback that runs every time binding mode changes
