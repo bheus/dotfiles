@@ -19,7 +19,7 @@ color-link tabbar "#586e75,#eee8d5"
 color-link indent-char "#93a1a1"
 color-link line-number "#93a1a1,#eee8d5"
 color-link current-line-number "#586e75,#eee8d5"
-color-link cursor-line ",#eee8d5"
+color-link cursor-line "#eee8d5"
 color-link color-column ",#eee8d5"
 color-link match-brace ",#93a1a1"
 
