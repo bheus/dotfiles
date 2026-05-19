@@ -1,1 +1,1 @@
-source /Users/bheussler/.config/op/plugins.sh
+source "$HOME/.config/op/plugins.sh"
