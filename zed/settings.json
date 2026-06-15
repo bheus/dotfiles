@@ -10,14 +10,14 @@
   "diff_view_style": "unified",
   "agent_servers": {
     "opencode": {
-      "type": "registry"
+      "type": "registry",
     },
     "codex-acp": {
-      "type": "registry"
+      "type": "registry",
     },
     "claude-acp": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "project_panel": {
     "dock": "left",
@@ -36,7 +36,7 @@
     "dock": "right",
     "default_model": {
       "provider": "ollama",
-      "model": "qwen2.5-coder:7b",
+      "model": "qwen2.5-coder:3b",
     },
     "favorite_models": [],
     "model_parameters": [],
