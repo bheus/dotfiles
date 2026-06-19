@@ -38,6 +38,7 @@
       "provider": "ollama",
       "model": "qwen2.5-coder:3b",
     },
+    "commit_message_instructions": "Return exactly one plain-text Conventional Commit subject and nothing else. The first character of the response must be the first character of the commit type. Do not wrap the subject in backticks, quotes, a code block, or any other Markdown; the response must not contain a backtick character anywhere. Use the form type: summary. Choose the most accurate type from feat, fix, docs, style, refactor, perf, test, build, ci, chore, or revert. Prefer no scope. Only add a scope when it provides essential context; it must be one short lowercase word, never a file path or slash-separated value. Write an imperative summary focused on the user-visible intent rather than implementation details. The first word after the colon must begin with a lowercase letter. Preserve necessary capitalization in proper names and acronyms such as Alpaca and SIP. Keep the entire line at or below 72 characters. Use ! before the colon only for breaking changes. Do not add a body, explanation, prefix, suffix, quotes, or trailing period.",
     "favorite_models": [],
     "model_parameters": [],
   },
