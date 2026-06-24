@@ -85,7 +85,7 @@ AeroSpace auto-assigns apps to workspaces on launch, keyed to the Dvorak left-ha
 | `O` | Obsidian | Obsidian |
 | `E` | Editor | Zed |
 | `U` | Utility | Ghostty |
-| `I` | Internet | Safari |
+| `I` | Internet | Safari, Chrome |
 | `D` | Default | scratch |
 | `M` | Music | Spotify |
 
